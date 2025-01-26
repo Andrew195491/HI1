@@ -1,0 +1,32 @@
+<div class="container"> 
+  <!-- Botón para abrir/cerrar el menú -->
+  <div class="menu-toggle-div" [class.open]="isMenuOpen">
+    <button class="menu-toggle" (click)="isMenuOpen = !isMenuOpen">
+      @if(!isMenuOpen){
+      <span class="toggle-icon">→</span>
+      }@else {
+      <span class="toggle-icon">←</span>
+      }
+    </button>
+  </div>
+
+  <!-- Menú lateral -->
+  <div class="sidebar" [class.open]="isMenuOpen">
+    <button (click)="showDiary = false; showSummary = false">Ventana Principal</button>
+    <button (click)="showDiary = true; showSummary = false">Ir al Diario</button>
+    <button (click)="showSummary = true; showDiary = false">Ir al Resumen</button>
+  </div>
+
+  <!-- Contenido dinámico -->
+  <div class="content" [class.shifted]="isMenuOpen">
+    @if(showDiary){
+      <app-diary></app-diary>
+    }
+    @else if(showSummary){
+      <app-summary></app-summary>
+    }
+    @else{
+      <app-history></app-history>
+    }
+  </div>
+</div>

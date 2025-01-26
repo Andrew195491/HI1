@@ -1,0 +1,122 @@
+/* Contenedor general */
+
+
+.container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    margin: -8px
+  }
+  
+  /* Botón para abrir/cerrar el menú */
+  .menu-toggle {
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-toggle .toggle-icon {
+    font-size: 24px;
+  }
+  
+  .menu-toggle:hover {
+    background-color: #1abc9c;
+  }
+  
+  /* Sidebar (menú lateral) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%); /* Inicialmente está fuera de la pantalla */
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0); /* Cuando se abre, se desliza hacia la izquierda */
+  }
+
+  .menu-toggle-div{
+    transition: transform 0.3s ease;
+  }
+
+  .menu-toggle-div.open{
+    transform: translateX(725%);
+  }
+  
+  
+  /* Botones dentro del menú */
+  .sidebar button {
+    background-color: #34495e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar button:hover {
+    background-color: #1abc9c;
+  }
+  
+  /* Área de contenido */
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .content.shifted {
+    margin-left: 290px; /* El contenido se mueve a la derecha cuando el menú se abre */
+  }
+  
+  
+  
+  /* Animación para mostrar el menú */
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Ajustar contenido cuando el menú está abierto */
+  .menu[hidden] ~ .content {
+    margin-left: 0;
+  }
+  

@@ -1,0 +1,68 @@
+.chapter-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Para darle un poco de profundidad */
+  }
+
+  .story-text {
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.6;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+  }
+  
+  .story-text {
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.6;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+  }
+
+  /* Opciones (botones de elección) */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+    align-items: center;
+  }
+  
+  .options button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 80%;
+    transition: background-color 0.3s ease;
+  }
+
+  
+  .options button:hover {
+    background-color: #16a085;
+  }
+  
+  .options button:focus {
+    outline: none;
+  }

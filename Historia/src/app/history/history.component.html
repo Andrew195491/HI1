@@ -1,0 +1,30 @@
+<div class="chapter-title">
+    Capítulo 1: La oscuridad se avecina
+</div>
+
+<div class="story-text">
+    @if(currentScene == 'scene1'){
+        <p>Estás en un pueblo oscuro, donde el aire está lleno de misterio. El viento susurra entre los árboles, y a lo lejos puedes ver dos caminos. Uno lleva hacia una cueva húmeda, y el otro hacia una vieja casa en ruinas.</p>
+    }
+    @if(currentScene == 'scene2-1'){
+        <p>Decides adentrarte en la cueva. Las paredes de roca brillan con un resplandor tenue, y el eco de tus pasos resuena en el aire. De repente, escuchas un rugido lejano.</p>
+    }
+    @if(currentScene == 'scene2-2'){
+        <p>Llegas al castillo, cuyos muros se alzan imponentes. Dentro, un extraño silencio lo envuelve todo. Te preguntas qué secretos guarda en su interior.</p>
+    }
+</div>
+
+<div class="options">
+    @if(currentScene == 'scene1'){
+        <button (click)="nextScene('scene2-1')">Explorar la cueva</button>
+        <button (click)="nextScene('scene2-2')">Explorar la vieja casa</button>
+    }
+    @if(currentScene == 'scene2-1'){
+        <button (click)="nextScene('scene3-1')">Investigar el ruido</button>
+        <button (click)="nextScene('scene3-2')">Salir de la cueva</button>
+    }
+    @if(currentScene == 'scene2-2'){
+        <button (click)="nextScene('scene3-3')">Seguir hacia delante</button>
+        <button (click)="nextScene('scene3-4')">Retractarte y salir</button>
+    }
+</div>
