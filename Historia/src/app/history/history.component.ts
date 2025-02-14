@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-history',
+  imports: [ FormsModule, CommonModule],
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.css']
 })
+
 export class HistoryComponent {
   currentScene: string = 'scene1'; // Escena inicial
   dudar: boolean = false;
   preguntar: boolean = false;
-  availableNames: string[] = ['Tomás', 'Juan', 'Pedro', 'Rodrigo', 'Andrés'];
+  inputName: string = "";
   contador: number = 0;
   escenasSiguientes: string[] = ['scene7-1-1', 'scene7-1-2', 'scene7-1-3'];
 
@@ -23,22 +27,27 @@ export class HistoryComponent {
     this.nextScene('scene5-2');
   }
 
-  selectName(selectedName: string) {
-    // Eliminar el nombre seleccionado de la lista
-    this.availableNames = this.availableNames.filter(name => name !== selectedName);
-
-    // Avanzar a la siguiente escena según el contador
-    if (this.contador < this.escenasSiguientes.length) {
-      this.nextScene(this.escenasSiguientes[this.contador]);
+  checkName() {
+    if (this.inputName.toLowerCase().trim() === 'el hijo de mi madre') {
+      this.currentScene = 'scene10.5';
+    } else {
+        if(this.contador == 0){
+          this.nextScene('scene7-1-1');
+        }else if(this.contador == 1){
+          this.nextScene('scene7-1-2');
+        }
+        else{
+          this.nextScene('scene7-1-3');
+        }
+      this.contador++;
     }
-
-    this.contador++;
   }
 
   dudarYAvanzar() {
     this.dudar = true;
     this.nextScene('scene5-3');
   }
+  
   trackByFn(index: number, item: string): string {
     return item;
   }  
