@@ -1,125 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <body [ngClass]="{'bright-scene': currentScene === 'scene11'}"> 
-        <div class="fondo"></div> 
+    <body [ngClass]="{'bright-scene': currentScene === 'scene11'}">
+
+        <div class="fondo"></div>
         <div class="niebla"></div>
         <div class="chapter-title">
             Capítulo 1: La oscuridad se avecina
         </div>
-        
+    
         <div class="story-text">
-            @if(currentScene == 'scene1'){
+            <!-- Escena 1 -->
+            <div *ngIf="currentScene == 'scene1'">
                 <p><i>Las estrellas titilan sobre el agua, sus reflejos fragmentados por las suaves ondulaciones del río. La niebla se arremolina en la superficie como un velo etéreo, ocultando los secretos de quienes alguna vez intentaron cruzarlo. En algún lugar, se encuentra un niño durmiendo, con el eco de un nombre perdido en su mente.</i></p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene2'){
+            </div>
+    
+            <!-- Escena 2 -->
+            <div *ngIf="currentScene == 'scene2'">
                 <p>El niño abre los ojos lentamente. Su cabeza le duele, como si un vacío inmenso se hubiera tragado algo importante dentro de él. Se encuentra tendido sobre la orilla de un río extraño, con un leve sabor salado en los labios. Al incorporarse, siente frío en los huesos, aunque no recuerda por qué.</p>
                 <p>Mira a su alrededor. No hay senderos, no hay casas, no hay más que el río y la niebla. El agua oscura se extiende hasta donde alcanza la vista, y más allá, una silueta se mueve entre las sombras.</p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene3-1'){
+            </div>
+    
+            <!-- Escena 3 -->
+            <div *ngIf="currentScene == 'scene3-1'">
                 <p>Su voz resuena en el aire, pero lo único que regresa es un eco distorsionado.</p>
                 <p>Algo en el río parece moverse en respuesta.</p>
-            }
-        
-            @if(currentScene == 'scene3-2'){
+            </div>
+            <div *ngIf="currentScene == 'scene3-2'">
                 <p>Encuentra huellas en la arena que no parecen suyas.</p>
                 <p>Oye el sonido de un remo golpeando el agua.</p>
-            }
-        
-            @if(currentScene == 'scene3-3'){
+            </div>
+            <div *ngIf="currentScene == 'scene3-3'">
                 <p>Su rostro se ve borroso, como si no estuviera del todo presente.</p>
                 <p>Un par de ojos desconocidos lo observan desde las profundidades.</p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene4'){
+            </div>
+    
+            <!-- Escena 4 -->
+            <div *ngIf="currentScene == 'scene4'">
                 <p>Una barca se desliza silenciosa hasta la orilla. Sentado en ella, un hombre con túnica oscura sujeta un remo largo con manos huesudas. Su rostro está oculto por una capucha, pero su voz es profunda y resonante.</p>
                 <p>- Barquero: <i>Has perdido tu nombre, pequeño viajero. Pero todo aquel que cruza este río debe recordar quién es antes de llegar a la otra orilla. Si no lo logras… quedarás atrapado aquí para siempre.</i></p>
                 <p>El niño no entiende. No recuerda haber llegado hasta allí, ni quién es, ni de dónde viene. Pero algo en la voz del barquero le dice que no hay otra opción.</p>
                 <p>- Barquero: <i>Sube. La corriente no espera a nadie.</i></p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene5-1'){
+            </div>
+    
+            <!-- Escena 5 -->
+            <div *ngIf="currentScene == 'scene5-1'">
                 <p>El viaje comienza de inmediato, pero el niño siente que ha dejado algo atrás.</p>
-            }
-        
-            @if(currentScene == 'scene5-2'){
+            </div>
+            <div *ngIf="currentScene == 'scene5-2'">
                 <p>El barquero responde de forma críptica: <i>Soy el guardián del olvido. Este río devora nombres.</i></p>
-            }
-        
-            @if(currentScene == 'scene5-3'){
+            </div>
+            <div *ngIf="currentScene == 'scene5-3'">
                 <p>El barquero espera, pero la orilla empieza a desaparecer tras él. No hay otra opción.</p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene6'){
+            </div>
+    
+            <!-- Escena 6 -->
+            <div *ngIf="currentScene == 'scene6'">
                 <p>El bote avanza suavemente por el río. A su alrededor, la niebla se mueve con vida propia, como si intentara envolverlos. A medida que reman, el niño comienza a escuchar susurros en la brisa.</p>
                 <p><i>"Pedro… Tomás… Diego…"</i></p>
                 <p>Las voces flotan en el aire como hojas secas arrastradas por el viento. Son nombres. Infinitos nombres. Algunos le resultan familiares, pero ninguno parece encajar del todo.</p>
                 <p>Las sombras comienzan a surgir en la superficie del agua. Figuras borrosas con rostros pálidos y ojos huecos se mueven bajo las olas, extendiendo manos espectrales hacia la barca.</p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene7-1'){
+            </div>
+    
+            <!-- Escena 7 -->
+            <div *ngIf="currentScene == 'scene7-1'">
                 <p>Intentas pensar un nombre al azar de forma desesperada.</p>
                 <input type="text" [(ngModel)]="inputName" placeholder="Introduzca un nombre">
-            }
-        
-            @if(currentScene == 'scene7-2'){
+            </div>
+            <div *ngIf="currentScene == 'scene7-2'">
                 <p>El barquero espera, pero la orilla empieza a desaparecer tras él. No hay otra opción.</p>
-            }
-            
-            @if(currentScene == 'scene7-1-1'){
+            </div>
+            <div *ngIf="currentScene == 'scene7-1-1'">
                 <p>Al elegir un nombre, sientes como la voz se distorsiona y el río parece oscurecerse más. {{inputName}} no eres tú</p>
-            }
-        
-            @if(currentScene == 'scene7-1-2'){
+            </div>
+            <div *ngIf="currentScene == 'scene7-1-2'">
                 <p>Sientes como la voz se distorsiona aún más y el río parece oscurecerse todavía más. Está claro que tampoco eres {{inputName}}</p>
-            }
-        
-            @if(currentScene == 'scene7-1-3'){
+            </div>
+            <div *ngIf="currentScene == 'scene7-1-3'">
                 <p>Apenas logras entender la voz y el río está totalmente negro. Tienes un mal presentimiento. No quieres seguir diciendo más nombres.</p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene8'){
+            </div>
+    
+            <!-- Escena 8 -->
+            <div *ngIf="currentScene == 'scene8'">
                 <p>El barquero se limita a remar. <i>"Tu nombre solo puede volver a ti si lo llamas desde tu corazón."</i></p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene9'){
+            </div>
+    
+            <!-- Escena 9 -->
+            <div *ngIf="currentScene == 'scene9'">
                 <p>El niño siente un calor en su pecho. Algo que no es un nombre, sino un recuerdo.</p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene10'){
+            </div>
+    
+            <!-- Escena 10 -->
+            <div *ngIf="currentScene == 'scene10'">
                 <p>El niño está desesperado. Cada nombre que pronuncia se disuelve en la brisa. La otra orilla está cada vez más cerca.</p>
                 <p>Entonces, en un instante de claridad, deja de pelear contra el olvido. Deja de intentar encajar en los nombres ajenos. En cambio, piensa en lo único que siempre ha sabido:</p>
                 <p><i>"Soy el hijo de mi madre."</i></p>
-            }
-        
-            @if (currentScene == 'scene10.5') {
+            </div>
+    
+            <!-- Escena 10.5 -->
+            <div *ngIf="currentScene == 'scene10.5'">
                 <p>En ese momento, siente que algo dentro de él se enciende. Su verdadero nombre, su identidad, regresa como un eco lejano.</p>
                 <p>El barquero dice con una pequeña sonrrisa: <i>"Ahora puedes cruzar."</i></p>
                 <p>El río se ilumina con un resplandor dorado. El bote se desvanece y el niño despierta en la otra orilla, con su nombre en los labios.</p>
-            }
-        
-        
-        
-            @if(currentScene == 'scene11'){
+            </div>
+    
+            <!-- Escena 11 -->
+            <div *ngIf="currentScene == 'scene11'">
                 <p>Ellie está en su cama, con los ojos abiertos como platos. Su madre, sentada a su lado, cierra el libro imaginario que siempre usa para sus cuentos.</p>
                 <p>- Ellie: <i>¡Eso fue increíble! ¡Pero qué miedo daba el barquero!</i></p>
                 <p>- Madre (riendo): <i>El río de la memoria es un lugar traicionero. Pero siempre hay una manera de recordar quién eres.</i></p>
@@ -127,97 +112,62 @@
                 <p>- Padre: <i>Es tarde, las historias pueden esperar hasta mañana.</i></p>
                 <p>- Madre: <i>Pero mañana será otra historia diferente.</i></p>
                 <p>Ellie se acurruca en su cama, feliz. No sabe que, años después, esta historia no será solo un cuento... sino una advertencia.</p>
-            }
+            </div>
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    
         <div class="options">
-            @if(currentScene == 'scene1'){
+            <!-- Opciones para cada escena -->
+            <div *ngIf="currentScene == 'scene1'">
                 <button (click)="nextScene('scene2')">Abrir los ojos.</button>
-            }
-        
-        
-        
-            @if(currentScene == 'scene2'){
+            </div>
+    
+            <div *ngIf="currentScene == 'scene2'">
                 <button (click)="nextScene('scene3-1')">Gritar para ver si alguien responde.</button>
                 <button (click)="nextScene('scene3-2')">Caminar por la orilla en busca de un camino.</button>
                 <button (click)="nextScene('scene3-3')">Mirar su reflejo en el agua.</button>
-            }
-        
-        
-        
-            @if(currentScene == 'scene3-1' || currentScene == 'scene3-2' || currentScene == 'scene3-3'){
+            </div>
+    
+            <div *ngIf="currentScene == 'scene3-1' || currentScene == 'scene3-2' || currentScene == 'scene3-3'">
                 <button (click)="nextScene('scene4')">Acercarse para satisfacer tu curiosidad.</button>
-            }
-        
-        
-        
-            @if(currentScene == 'scene4' || currentScene == 'scene5-2' || currentScene == 'scene5-3'){
-                @if(preguntar){
-                    <button (click)="nextScene('scene6')">Subir a la barca.</button>
-                }
-                @else{
-                    <button (click)="nextScene('scene5-1')">Subir a la barca sin hacer preguntas.</button>
-                    <button (click)="preguntarYAvanzar()">Preguntar quién es el barquero y qué es este lugar.</button>
-                }    
-                @if(!dudar){
-                    <button (click)="dudarYAvanzar()">Dudar y retroceder.</button>
-                }
-            }
-        
-            @if(currentScene == 'scene5-1'){
+            </div>
+    
+            <div *ngIf="currentScene == 'scene4' || currentScene == 'scene5-2' || currentScene == 'scene5-3'">
+                <button *ngIf="preguntar" (click)="nextScene('scene6')">Subir a la barca.</button>
+                <button *ngIf="!preguntar" (click)="nextScene('scene5-1')">Subir a la barca sin hacer preguntas.</button>
+                <button *ngIf="!preguntar" (click)="preguntarYAvanzar()">Preguntar quién es el barquero y qué es este lugar.</button>
+                <button *ngIf="!dudar" (click)="dudarYAvanzar()">Dudar y retroceder.</button>
+            </div>
+    
+            <div *ngIf="currentScene == 'scene5-1'">
                 <button (click)="nextScene('scene6')">Mirar hacia delante</button>
-            }
-        
-        
-        
-            @if(currentScene == 'scene6' || currentScene == 'scene7-1-1' || currentScene == 'scene7-1-2' || currentScene == 'scene7-1-3'){
-                @if(currentScene == 'scene6'){
-                    <button (click)="nextScene('scene7-1')">Intentar recordar un nombre al azar y decirlo.</button>
-                }
-                @if(currentScene == 'scene7-1-1'){
-                    <button (click)="nextScene('scene7-1')">Volver a recordar otro nombre al azar y decirlo.</button>
-                }
-                @if(currentScene == 'scene7-1-2'){
-                    <button (click)="nextScene('scene7-1')">Decir un último nombre al azar, a ver si hay suerte.</button>
-                }
+            </div>
+    
+            <div *ngIf="currentScene == 'scene6' || currentScene == 'scene7-1-1' || currentScene == 'scene7-1-2' || currentScene == 'scene7-1-3'">
+                <button *ngIf="currentScene == 'scene6'" (click)="nextScene('scene7-1')">Intentar recordar un nombre al azar y decirlo.</button>
+                <button *ngIf="currentScene == 'scene7-1-1'" (click)="nextScene('scene7-1')">Volver a recordar otro nombre al azar y decirlo.</button>
+                <button *ngIf="currentScene == 'scene7-1-2'" (click)="nextScene('scene7-1')">Decir un último nombre al azar, a ver si hay suerte.</button>
                 <button (click)="nextScene('scene8')">Pedir ayuda al barquero.</button>
-            }
-        
-        
-            @if(currentScene == 'scene7-1'){
+            </div>
+    
+            <div *ngIf="currentScene == 'scene7-1'">
                 <button (click)="checkName()" name="inputName">Probar nombre</button>
-            }
-        
-        
-        
-            @if(currentScene == 'scene8'){
+            </div>
+    
+            <div *ngIf="currentScene == 'scene8'">
                 <button (click)="nextScene('scene9')">Taparse los oídos y concentrarse en algo más.</button>
-            }
-        
-        
-        
-            @if(currentScene == 'scene9'){
+            </div>
+    
+            <div *ngIf="currentScene == 'scene9'">
                 <button (click)="nextScene('scene10')">Concentrarse de una forma más profunda.</button>
-            }
-        
-        
-        
-            @if(currentScene == 'scene10'){
+            </div>
+    
+            <div *ngIf="currentScene == 'scene10'">
                 <button (click)="nextScene('scene10.5')">Destaparse los oídos.</button>
-            }
-        
-            @if(currentScene == 'scene10.5'){
+            </div>
+    
+            <div *ngIf="currentScene == 'scene10.5'">
                 <button (click)="nextScene('scene11')">Volver al mundo real.</button>
-            }
+            </div>
         </div>
     </body>
 </html>

@@ -2,11 +2,10 @@
   <!-- Botón para abrir/cerrar el menú -->
   <div class="menu-toggle-div" [class.open]="isMenuOpen">
     <button class="menu-toggle" (click)="isMenuOpen = !isMenuOpen">
-      @if(!isMenuOpen){
-      <span class="toggle-icon">→</span>
-      }@else {
-      <span class="toggle-icon">←</span>
-      }
+      <span class="toggle-icon" *ngIf="!isMenuOpen; else openIcon">→</span>
+      <ng-template #openIcon>
+        <span class="toggle-icon">←</span>
+      </ng-template>
     </button>
   </div>
 
@@ -19,14 +18,8 @@
 
   <!-- Contenido dinámico -->
   <div class="content" [class.shifted]="isMenuOpen">
-    @if(showDiary){
-      <app-diary></app-diary>
-    }
-    @else if(showSummary){
-      <app-summary></app-summary>
-    }
-    @else{
-      <app-history></app-history>
-    }
+    <app-diary *ngIf="showDiary && !showSummary"></app-diary>
+    <app-summary *ngIf="showSummary && !showDiary"></app-summary>
+    <app-history *ngIf="!showDiary && !showSummary"></app-history>
   </div>
 </div>
