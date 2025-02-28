@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-summary',
-  imports: [],
   templateUrl: './summary.component.html',
-  styleUrl: './summary.component.css'
+  styleUrls: ['./summary.component.css']
 })
-export class SummaryComponent {
-
+export class SummaryComponent{
 }

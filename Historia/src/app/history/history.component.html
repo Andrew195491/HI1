@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <body [ngClass]="{'bright-scene': currentScene === 'scene11'}">
+    <body class = "history_body" [ngClass]="{'bright-scene': currentScene === 'scene11'}">
 
         <div class="fondo"></div>
         <div class="niebla"></div>
@@ -118,35 +118,35 @@
         <div class="options">
             <!-- Opciones para cada escena -->
             <div *ngIf="currentScene == 'scene1'">
-                <button (click)="nextScene('scene2')">Abrir los ojos.</button>
+                <button (click)="nextScene('scene2', $event)">Abrir los ojos.</button>
             </div>
     
             <div *ngIf="currentScene == 'scene2'">
-                <button (click)="nextScene('scene3-1')">Gritar para ver si alguien responde.</button>
-                <button (click)="nextScene('scene3-2')">Caminar por la orilla en busca de un camino.</button>
-                <button (click)="nextScene('scene3-3')">Mirar su reflejo en el agua.</button>
+                <button (click)="nextScene('scene3-1', $event)">Gritar para ver si alguien responde.</button>
+                <button (click)="nextScene('scene3-2', $event)">Caminar por la orilla en busca de un camino.</button>
+                <button (click)="nextScene('scene3-3', $event)">Mirar su reflejo en el agua.</button>
             </div>
     
             <div *ngIf="currentScene == 'scene3-1' || currentScene == 'scene3-2' || currentScene == 'scene3-3'">
-                <button (click)="nextScene('scene4')">Acercarse para satisfacer tu curiosidad.</button>
+                <button (click)="nextScene('scene4', $event)">Acercarse para satisfacer tu curiosidad.</button>
             </div>
     
             <div *ngIf="currentScene == 'scene4' || currentScene == 'scene5-2' || currentScene == 'scene5-3'">
-                <button *ngIf="preguntar" (click)="nextScene('scene6')">Subir a la barca.</button>
-                <button *ngIf="!preguntar" (click)="nextScene('scene5-1')">Subir a la barca sin hacer preguntas.</button>
-                <button *ngIf="!preguntar" (click)="preguntarYAvanzar()">Preguntar quién es el barquero y qué es este lugar.</button>
-                <button *ngIf="!dudar" (click)="dudarYAvanzar()">Dudar y retroceder.</button>
+                <button *ngIf="preguntar" (click)="nextScene('scene6', $event)">Subir a la barca.</button>
+                <button *ngIf="!preguntar" (click)="nextScene('scene5-1', $event)">Subir a la barca sin hacer preguntas.</button>
+                <button *ngIf="!preguntar" (click)="preguntarYAvanzar($event)">Preguntar quién es el barquero y qué es este lugar.</button>
+                <button *ngIf="!dudar" (click)="dudarYAvanzar($event)">Dudar y retroceder.</button>
             </div>
     
             <div *ngIf="currentScene == 'scene5-1'">
-                <button (click)="nextScene('scene6')">Mirar hacia delante</button>
+                <button (click)="nextScene('scene6', $event)">Mirar hacia delante</button>
             </div>
     
             <div *ngIf="currentScene == 'scene6' || currentScene == 'scene7-1-1' || currentScene == 'scene7-1-2' || currentScene == 'scene7-1-3'">
-                <button *ngIf="currentScene == 'scene6'" (click)="nextScene('scene7-1')">Intentar recordar un nombre al azar y decirlo.</button>
-                <button *ngIf="currentScene == 'scene7-1-1'" (click)="nextScene('scene7-1')">Volver a recordar otro nombre al azar y decirlo.</button>
-                <button *ngIf="currentScene == 'scene7-1-2'" (click)="nextScene('scene7-1')">Decir un último nombre al azar, a ver si hay suerte.</button>
-                <button (click)="nextScene('scene8')">Pedir ayuda al barquero.</button>
+                <button *ngIf="currentScene == 'scene6'" (click)="nextScene('scene7-1', $event)">Intentar recordar un nombre al azar y decirlo.</button>
+                <button *ngIf="currentScene == 'scene7-1-1'" (click)="nextScene('scene7-1', $event)">Volver a recordar otro nombre al azar y decirlo.</button>
+                <button *ngIf="currentScene == 'scene7-1-2'" (click)="nextScene('scene7-1', $event)">Decir un último nombre al azar, a ver si hay suerte.</button>
+                <button (click)="nextScene('scene8', $event)">Pedir ayuda al barquero.</button>
             </div>
     
             <div *ngIf="currentScene == 'scene7-1'">
@@ -154,19 +154,19 @@
             </div>
     
             <div *ngIf="currentScene == 'scene8'">
-                <button (click)="nextScene('scene9')">Taparse los oídos y concentrarse en algo más.</button>
+                <button (click)="nextScene('scene9', $event)">Taparse los oídos y concentrarse en algo más.</button>
             </div>
     
             <div *ngIf="currentScene == 'scene9'">
-                <button (click)="nextScene('scene10')">Concentrarse de una forma más profunda.</button>
+                <button (click)="nextScene('scene10', $event)">Concentrarse de una forma más profunda.</button>
             </div>
     
             <div *ngIf="currentScene == 'scene10'">
-                <button (click)="nextScene('scene10.5')">Destaparse los oídos.</button>
+                <button (click)="nextScene('scene10.5', $event)">Destaparse los oídos.</button>
             </div>
     
             <div *ngIf="currentScene == 'scene10.5'">
-                <button (click)="nextScene('scene11')">Volver al mundo real.</button>
+                <button (click)="nextScene('scene11', $event)">Volver al mundo real.</button>
             </div>
         </div>
     </body>
